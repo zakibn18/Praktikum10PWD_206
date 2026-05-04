@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHINE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Outfit', sans-serif; background: #fdfaf5; color: #1a1a1a; }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+    .glow {
+      background: radial-gradient(ellipse at center, rgba(255,210,100,0.25) 0%, transparent 70%);
+    }
+    .hero-bg {
+      background: linear-gradient(160deg, #fff8e7 0%, #fdf3d0 40%, #fff 100%);
+    }
+    .shine-text {
+      background: linear-gradient(90deg, #c8870a, #f5c842, #e8a020, #f5c842);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shine-anim 3s linear infinite;
+    }
+    @keyframes shine-anim {
+      to { background-position: 200% center; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade1 { animation: fadeUp 0.8s ease 0.1s both; }
+    .fade2 { animation: fadeUp 0.8s ease 0.3s both; }
+    .fade3 { animation: fadeUp 0.8s ease 0.5s both; }
+    .fade4 { animation: fadeUp 0.8s ease 0.7s both; }
+
+    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(200,135,10,0.12); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #c8870a, #f5c842);
+      transition: all 0.3s ease;
+    }
+    .btn-gold:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(200,135,10,0.35); }
+
+    .gold-line { background: linear-gradient(90deg, transparent, #f5c842, transparent); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-yellow-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-black tracking-widest shine-text" style="font-family:'Cormorant Garamond',serif;">
+        SHINE
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#tentang" class="hover:text-yellow-600 transition">Tentang</a>
+        <a href="#fitur"   class="hover:text-yellow-600 transition">Fitur</a>
+        <a href="#galeri"  class="hover:text-yellow-600 transition">Galeri</a>
+        <a href="#kontak"  class="btn-gold text-white px-5 py-2 rounded-full text-sm font-semibold">Kontak</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-slate-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-6 pb-5 flex flex-col gap-4 text-sm text-slate-700 border-t border-yellow-100">
+      <a href="#tentang" class="hover:text-yellow-600">Tentang</a>
+      <a href="#fitur"   class="hover:text-yellow-600">Fitur</a>
+      <a href="#galeri"  class="hover:text-yellow-600">Galeri</a>
+      <a href="#kontak"  class="hover:text-yellow-600">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+    <div class="absolute top-20 right-10 w-96 h-96 glow rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-10 left-0 w-64 h-64 glow rounded-full pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="fade1 text-yellow-600 uppercase tracking-[0.3em] text-xs font-semibold mb-4">✦ &nbsp;Project Kelompok · 2024</p>
+        <h1 class="fade2 text-7xl md:text-8xl font-black leading-none mb-2">
+          <span class="shine-text">SHINE</span>
+        </h1>
+        <p class="fade2 text-2xl text-slate-400 font-light mb-6 tracking-wide" style="font-family:'Cormorant Garamond',serif;">
+          Bersinar. Berkembang. Bermakna.
+        </p>
+        <p class="fade3 text-slate-600 text-base leading-relaxed mb-10 max-w-md">
+          SHINE adalah project yang hadir untuk membawa cahaya — sebuah platform sederhana
+          namun bermakna yang diciptakan dengan penuh semangat oleh tim kami.
+        </p>
+        <div class="fade4 flex flex-wrap gap-4">
+          <a href="#fitur" class="btn-gold text-white font-semibold px-8 py-3 rounded-full">Jelajahi ↓</a>
+          <a href="#tim" class="border border-yellow-400 text-yellow-700 font-semibold px-8 py-3 rounded-full hover:bg-yellow-50 transition">Kenali Tim</a>
+        </div>
+      </div>
+      <div class="fade3 flex justify-center">
+        <div class="relative">
+          <div class="absolute inset-0 rounded-full"
+               style="background:radial-gradient(circle, rgba(245,200,66,0.3) 0%, transparent 70%); transform:scale(1.2);"></div>
+          <div class="rounded-full overflow-hidden border-4 border-yellow-300 shadow-2xl relative z-10"
+               style="width:320px;height:320px;">
+            <!-- Ganti src dengan foto project kamu -->
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80"
+                 alt="SHINE Hero" class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-white border border-yellow-200 rounded-2xl px-4 py-2 shadow-lg z-20">
+            <span class="text-yellow-600 font-bold text-sm">✦ SHINE 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gold-line h-px w-full"></div>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-yellow-600 uppercase tracking-widest text-xs font-semibold mb-3">Tentang Kami</p>
+      <h2 class="text-5xl font-black mb-6 text-slate-900">Apa itu <span class="shine-text">SHINE</span>?</h2>
+      <div class="gold-line h-px w-24 mx-auto mb-8"></div>
+      <p class="text-slate-500 text-lg leading-relaxed">
+        SHINE lahir dari ide sederhana: bahwa setiap orang berhak untuk bersinar.
+        Project ini kami kerjakan bersama sebagai wujud kreativitas, kerja keras, dan semangat
+        kolaborasi tim yang ingin memberikan dampak nyata melalui teknologi dan desain.
+      </p>
+    </div>
+  </section>
+
+  <!-- FITUR -->
+  <section id="fitur" class="py-24 bg-[#fdfaf5]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-yellow-600 uppercase tracking-widest text-xs font-semibold mb-3">Unggulan</p>
+        <h2 class="text-5xl font-black text-slate-900">Fitur <span class="shine-text">SHINE</span></h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card bg-white rounded-3xl p-8 border border-yellow-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center text-2xl mb-5">✨</div>
+          <h3 class="text-2xl font-bold mb-3 text-slate-800">Fitur Pertama</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Deskripsi fitur pertama project SHINE kamu. Jelaskan keunggulan dan manfaatnya bagi pengguna.</p>
+        </div>
+        <div class="card bg-white rounded-3xl p-8 border border-yellow-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center text-2xl mb-5">🌟</div>
+          <h3 class="text-2xl font-bold mb-3 text-slate-800">Fitur Kedua</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Deskripsi fitur kedua project SHINE kamu. Jelaskan keunggulan dan manfaatnya bagi pengguna.</p>
+        </div>
+        <div class="card bg-white rounded-3xl p-8 border border-yellow-100 shadow-sm">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-50 flex items-center justify-center text-2xl mb-5">💡</div>
+          <h3 class="text-2xl font-bold mb-3 text-slate-800">Fitur Ketiga</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Deskripsi fitur ketiga project SHINE kamu. Jelaskan keunggulan dan manfaatnya bagi pengguna.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-yellow-600 uppercase tracking-widest text-xs font-semibold mb-3">Dokumentasi</p>
+        <h2 class="text-5xl font-black text-slate-900">Galeri</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Ganti URL dengan foto dokumentasi asli project kamu -->
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80"
+             alt="Galeri 1" class="card rounded-2xl w-full h-52 object-cover"/>
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80"
+             alt="Galeri 2" class="card rounded-2xl w-full h-52 object-cover"/>
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80"
+             alt="Galeri 3" class="card rounded-2xl w-full h-52 object-cover"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="py-24 relative overflow-hidden"
+           style="background: linear-gradient(135deg, #1a1208 0%, #2d1f00 100%);">
+    <div class="absolute inset-0 glow pointer-events-none"></div>
+    <div class="max-w-2xl mx-auto px-6 text-center relative z-10">
+      <p class="text-yellow-400 uppercase tracking-widest text-xs font-semibold mb-4">Hubungi Kami</p>
+      <h2 class="text-5xl font-black text-white mb-4">Siap untuk <span class="shine-text">Bersinar</span>?</h2>
+      <p class="text-slate-400 mb-10 text-lg">Ada pertanyaan atau masukan? Kami senang mendengarnya.</p>
+      <a href="mailto:email@mahasiswa.ac.id"
+         class="btn-gold text-white font-bold px-10 py-4 rounded-full text-base inline-block">
+        Kirim Pesan →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#120e04] text-slate-500 text-center py-6 text-xs tracking-wide">
+    © 2024 &nbsp;·&nbsp; <span class="shine-text font-bold text-sm">SHINE</span> &nbsp;·&nbsp;
+    Dibuat dengan ✦ menggunakan Tailwind CSS
+  </footer>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
